@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 /**
+ * Esta clase es la implementacion de la logica del negocio mediante una base de
+ * datos.
  *
  * @author Jason, Ian.
  */
@@ -16,8 +18,11 @@ public class DBImplementation implements Model {
     private Connection con = null;
     private PreparedStatement stmt;
 
-    private final String GET_GREATING = "SELECT greating FROM greating";
+    private final String GET_greeting = "SELECT greeting FROM greeting";
 
+    /**
+     * Abre la conexion con la base de datos.
+     */
     public void openConnection() {
 
         try {
@@ -32,6 +37,9 @@ public class DBImplementation implements Model {
         }
     }
 
+    /**
+     * Cierra la conexion con la base de datos.
+     */
     public void closeConnection() {
         try {
             if (con != null) {
@@ -45,24 +53,28 @@ public class DBImplementation implements Model {
         }
     }
 
+    /**
+     * Busca el mensaje que se va a mostrar en la base de datos.
+     *
+     * @return el mensaje que se va a mostrar.
+     */
     @Override
-    public String getGreating() {
-        String greating = null;
+    public String getGreeting() {
+        String greeting = null;
         this.openConnection();
 
         try {
-            stmt = con.prepareStatement(GET_GREATING);
+            stmt = con.prepareStatement(GET_greeting);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                greating = rs.getString("greating");
+                greeting = rs.getString("greeting");
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         this.closeConnection();
-        return greating;
+        return greeting;
     }
 }

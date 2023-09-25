@@ -10,21 +10,35 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 /**
+ * Es la implementacion de la vista orientada a una ventana JavaFX.
  *
  * @author Jason, Ian.
  */
 public class ViewImplementation extends javafx.application.Application implements View {
 
     @FXML
-    private Label lblGreating;
+    private Label lblgreeting;
 
+    /**
+     * Guarda el mensaje que se le pasa por parametro en un array de strings y
+     * se abre la ventana JavaFX.
+     *
+     * @param greeting
+     */
     @Override
-    public void showGreating(String greating) {
+    public void showGreeting(String greeting) {
         String[] args = new String[1];
-        args[0] = greating;
+        args[0] = greeting;
         launch(args);
     }
 
+    /**
+     * Genera y muestra una ventana JavaFX con el mensaje que se ha conseguido
+     * con el modelo de datos.
+     *
+     * @param primaryStage
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
@@ -37,7 +51,7 @@ public class ViewImplementation extends javafx.application.Application implement
             Scene scene = new Scene(root);
             stage.setScene(scene);
 
-            viewController.lblGreating.setText(getParameters().getRaw().get(0));
+            viewController.lblgreeting.setText(getParameters().getRaw().get(0));
 
             stage.show();
 

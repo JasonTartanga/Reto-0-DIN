@@ -18,7 +18,8 @@ public class FileImplementationTest {
     }
 
     @Test
-    public void testGetGreating() {
-
+    public void testGetGreeting() {
+        FileImplementation fileImplementation = new FileImplementation();
+        assertEquals("Hello World From File", fileImplementation.getGreeting());
     }
 }

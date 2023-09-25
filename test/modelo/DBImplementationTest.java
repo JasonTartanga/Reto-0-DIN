@@ -5,10 +5,15 @@
  */
 package modelo;
 
+import java.sql.SQLException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 import modelo.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.ExpectedException;
 
 /**
  *
@@ -16,25 +21,33 @@ import modelo.*;
  */
 public class DBImplementationTest {
 
+    private DBImplementation dBImplementation;
+
+    @Rule
+    public ExpectedException expectedException;
+
     public DBImplementationTest() {
     }
 
-    @Test
-    public void testAbrirConexion() {
-        DBImplementation dbImplementation = new DBImplementation();
-
+    @Before
+    public void setUp() {
+        dBImplementation = new DBImplementation();
+        dBImplementation.openConnection();
     }
 
     @Test
-    public void testCerrarConexion() {
-        DBImplementation dbImplementation = new DBImplementation();
-
+    public void testGetGreeting() {
+        assertEquals("Hello World From DB", dBImplementation.getGreeting());
     }
 
     @Test
-    public void testGetGreating() {
-        DBImplementation dbImplementation = new DBImplementation();
-        assertEquals("Hola Mundo desde BD", dbImplementation.getGreating());
+    public void testGetGreetingException() throws SQLException {
+        expectedException.expect(SQLException.class);
+        dBImplementation.getGreeting();
     }
 
+    @After
+    public void closeConection() {
+        dBImplementation.closeConnection();
+    }
 }
