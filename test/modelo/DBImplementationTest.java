@@ -23,9 +23,6 @@ public class DBImplementationTest {
 
     private DBImplementation dBImplementation;
 
-    @Rule
-    public ExpectedException expectedException;
-
     public DBImplementationTest() {
     }
 
@@ -38,12 +35,6 @@ public class DBImplementationTest {
     @Test
     public void testGetGreeting() {
         assertEquals("Hello World From DB", dBImplementation.getGreeting());
-    }
-
-    @Test
-    public void testGetGreetingException() throws SQLException {
-        expectedException.expect(SQLException.class);
-        dBImplementation.getGreeting();
     }
 
     @After
