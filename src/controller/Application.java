@@ -1,7 +1,7 @@
-package controlador;
+package controller;
 
-import modelo.ModelFactory;
-import vista.ViewFactory;
+import model.ModelFactory;
+import view.ViewFactory;
 
 /**
  * Esta es la clase que inicializa la aplicacion.

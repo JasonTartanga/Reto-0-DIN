@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,9 +26,9 @@ public class DBImplementation implements Model {
     public void openConnection() {
 
         try {
-            final String URL = ResourceBundle.getBundle("ficheros.configBDA").getString("url");
-            final String USER = ResourceBundle.getBundle("ficheros.configBDA").getString("user");
-            final String PASSWORD = ResourceBundle.getBundle("ficheros.configBDA").getString("password");;
+            final String URL = ResourceBundle.getBundle("files.configBDA").getString("url");
+            final String USER = ResourceBundle.getBundle("files.configBDA").getString("user");
+            final String PASSWORD = ResourceBundle.getBundle("files.configBDA").getString("password");;
 
             con = DriverManager.getConnection(URL, USER, PASSWORD);
 

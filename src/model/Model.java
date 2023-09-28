@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 /**
  * Es la interfaz de la logica del negocio.
