@@ -1,4 +1,4 @@
-package vista;
+package view;
 
 import java.util.ResourceBundle;
 
@@ -17,7 +17,7 @@ public class ViewFactory {
      * @return la implementacion de la vista.
      */
     public static View getView() {
-        String viewOpc = ResourceBundle.getBundle("ficheros.configApp").getString("view");
+        String viewOpc = ResourceBundle.getBundle("files.configApp").getString("view");
 
         if (viewOpc.equalsIgnoreCase("view")) {
             return new ViewImplementation();

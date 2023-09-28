@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 import java.util.ResourceBundle;
 
@@ -16,6 +16,6 @@ public class FileImplementation implements Model {
      */
     @Override
     public String getGreeting() {
-        return ResourceBundle.getBundle("ficheros.greeting").getString("greeting");
+        return ResourceBundle.getBundle("files.greeting").getString("greeting");
     }
 }

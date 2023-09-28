@@ -1,4 +1,4 @@
-package vista;
+package view;
 
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
@@ -42,7 +42,7 @@ public class ViewImplementation extends javafx.application.Application implement
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("VMain.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("View.fxml"));
             Parent root = loader.load();
 
             ViewImplementation viewController = loader.getController();

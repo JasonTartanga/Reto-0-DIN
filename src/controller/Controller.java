@@ -1,7 +1,7 @@
-package controlador;
+package controller;
 
-import modelo.Model;
-import vista.View;
+import model.Model;
+import view.View;
 
 /**
  * Esta clase es la capa controlador que esta entre las capas de la interfaz de

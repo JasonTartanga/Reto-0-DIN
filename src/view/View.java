@@ -1,4 +1,4 @@
-package vista;
+package view;
 
 /**
  * La interfaz de la vista.

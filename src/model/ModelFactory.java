@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 import java.util.ResourceBundle;
 
@@ -17,8 +17,7 @@ public class ModelFactory {
      * @return una implementacion del modelo de datos.
      */
     public static Model getModel() {
-        String modelOpc = ResourceBundle.getBundle("ficheros.configApp").getString("model");
-
+        String modelOpc = ResourceBundle.getBundle("files.configApp").getString("model");
         if (modelOpc.equalsIgnoreCase("database")) {
             return new DBImplementation();
         } else {

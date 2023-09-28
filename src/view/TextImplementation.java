@@ -1,4 +1,4 @@
-package vista;
+package view;
 
 /**
  * Es una implementacion de la interfaz de usuario orientada a consola.
