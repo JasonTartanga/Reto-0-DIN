@@ -23,7 +23,7 @@ public class ViewImplementation extends javafx.application.Application implement
      * Guarda el mensaje que se le pasa por parametro en un array de strings y
      * se abre la ventana JavaFX.
      *
-     * @param greeting
+     * @param greeting el mensaje que se va a mostrar.
      */
     @Override
     public void showGreeting(String greeting) {
@@ -36,8 +36,8 @@ public class ViewImplementation extends javafx.application.Application implement
      * Genera y muestra una ventana JavaFX con el mensaje que se ha conseguido
      * con el modelo de datos.
      *
-     * @param primaryStage
-     * @throws Exception
+     * @param primaryStage la ventana prinicpal.
+     * @throws Exception gestiona un error a la hora de abrir la ventana.
      */
     @Override
     public void start(Stage primaryStage) throws Exception {
